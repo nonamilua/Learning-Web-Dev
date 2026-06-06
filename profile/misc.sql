@@ -156,7 +156,7 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `password`) VALUES
 (2, 'UMSI', 'umsi@umich.edu', '1a52e17fa899cf40fb04cfc42e6352f1');
 
 --
--- Constraints for dumped tables
+-- Password is php123
 --
 
 --
