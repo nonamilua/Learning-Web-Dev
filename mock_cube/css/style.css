@@ -173,3 +173,7 @@ a[target="_blank"]::after {
 #tierlist {
     max-width: 80vw;
 }
+
+pre {
+    white-space: pre-wrap;
+}
