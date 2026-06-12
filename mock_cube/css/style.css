@@ -106,7 +106,6 @@ nav ul {
 }
 
 nav li {
-    flex: 1;
     text-align: center;
 }
 
@@ -122,6 +121,16 @@ nav li a {
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+#kiki img {
+    width: 300px;
+    max-width: 30vw;
+    height: auto;
+}
+
+#kiki div {
+    flex: 1;
 }
 
 a[target="_blank"]::after {
@@ -159,4 +168,8 @@ a[target="_blank"]::after {
 .algs a {
     grid-column: 2;
 
+}
+
+#tierlist {
+    max-width: 80vw;
 }
