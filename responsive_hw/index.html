@@ -23,48 +23,77 @@
     </ul>
     <p>You will need to make additional changes to ensure that the divs appear next to each other and that the
         images are contained within the divs. Some of these properties include display, width and max-height.</p>
+    <br>
+    Select Color Scheme:
+    <select id="theme-select">
+        <option value="system">System</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
 
-    <div>
-        <img src="images/red.png" alt="Red" width="200">
-        <p class="label">Red</p>
-    </div>
-    <div>
-        <img src="images/Orange.png" alt="Orange" width="200">
-        <p class="label">Orange</p>
-    </div>
-    <div>
-        <img src="images/Yellow.png" alt="Yellow" width="200">
-        <p class="label">Yellow</p>
-    </div>
-    <div>
-        <img src="images/Green.png" alt="Green" width="200">
-        <p class="label">Green</p>
-    </div>
-    <div>
-        <img src="images/Blue.png" alt="Blue">
-        <p class="label">Blue</p>
-    </div>
-    <div>
-        <img src="images/Indigo.jpeg" alt="Indigo">
-        <p class="label">Indigo</p>
-    </div>
-    <div>
-        <img src="images/Purple.png" alt="Purple">
-        <p class="label">Purple</p>
-    </div>
-    <div>
-        <img src="images/Pink.jpeg" alt="Pink">
-        <p class="label">Pink</p>
-    </div>
-    <div>
-        <img src="images/White.png" alt="Black">
-        <p class="label">Black</p>
-    </div>
+    <div class="grid">
+        <div>
+            <img src="images/red.png" alt="Red">
+            <p class="label">Red</p>
+        </div>
+        <div>
+            <img src="images/Orange.png" alt="Orange">
+            <p class="label">Orange</p>
+        </div>
+        <div>
+            <img src="images/Yellow.png" alt="Yellow">
+            <p class="label">Yellow</p>
+        </div>
+        <div>
+            <img src="images/Green.png" alt="Green">
+            <p class="label">Green</p>
+        </div>
+        <div>
+            <img src="images/Blue.png" alt="Blue">
+            <p class="label">Blue</p>
+        </div>
+        <div>
+            <img src="images/Indigo.jpeg" alt="Indigo">
+            <p class="label">Indigo</p>
+        </div>
+        <div>
+            <img src="images/Purple.png" alt="Purple">
+            <p class="label">Purple</p>
+        </div>
+        <div>
+            <img src="images/Pink.jpeg" alt="Pink">
+            <p class="label">Pink</p>
+        </div>
+        <div>
+            <img src="images/White.png" alt="Black">
+            <p class="label">Black</p>
+        </div>
     </div>
 
     <footer>
         <a href="#top">Jump to the Top</a>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const select = document.getElementById("theme-select");
+
+            const saved = localStorage.getItem("theme") || "system";
+
+            function apply(theme) {
+                document.documentElement.className = theme === "system" ? "" : theme;
+                localStorage.setItem("theme", theme);
+            }
+
+            apply(saved);
+            select.value = saved;
+
+            select.addEventListener("change", (e) => {
+                apply(e.target.value);
+            });
+        });
+    </script>
+
 </body>
 
 </html>
